@@ -4,9 +4,11 @@ Grafana for Nim
 Grafana module for nim 🤷‍♂️
 
 
+*note*: not stable enough to release to nimble
+
 ## Installing
 
-`nimble install grafana-nim`
+`nimble install https://github.com/jamesalbert/grafana-nim.git@#head`
 
 ## Development
 

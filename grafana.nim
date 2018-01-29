@@ -15,8 +15,7 @@ proc newGrafanaClient* (host: string, user: string, pass: string): GrafanaClient
     "Accept": "application/json",
     "Authorization": "Basic " & encode(user & ":" & pass)
   })
-  return GrafanaClient(cli: client,
-                       url: url)
+  return GrafanaClient(cli: client, url: url)
 
 
 proc newGrafanaClient* (host: string, key: string): GrafanaClient =
@@ -27,8 +26,7 @@ proc newGrafanaClient* (host: string, key: string): GrafanaClient =
     "Accept": "application/json",
     "Authorization": "Bearer " & key
   })
-  return GrafanaClient(cli: client,
-                       url: url)
+  return GrafanaClient(cli: client, url: url)
 
 
 method Request (self: GrafanaClient, route: string): JsonNode {.base.} =

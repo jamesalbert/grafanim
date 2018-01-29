@@ -22,6 +22,8 @@ It's not really a "testing environment", just a container to mess around with ap
 ## Examples
 
 ```nim
+import grafana
+
 let gc = newGrafanaClient("localhost:3000", "user", "pass") # or ("localhost:3000", "api-key")
 gc.Dashboards()
 ```

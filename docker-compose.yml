@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+  grafana-nim:
+    build: .
+    volumes:
+      - ./:/app
+    links:
+      - grafana
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000

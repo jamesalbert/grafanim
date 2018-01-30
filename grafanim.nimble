@@ -10,3 +10,4 @@ license       = "GPL"
 requires "nim >= 0.17.2"
 
 skipDirs = @["tests"]
+srcDir = "src"

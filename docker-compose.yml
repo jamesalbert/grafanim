@@ -7,6 +7,7 @@ services:
       - ./:/app
     links:
       - grafana
+      - influxdb
     command: /bin/bash
     stdin_open: true
     tty: true
@@ -15,3 +16,13 @@ services:
     image: grafana/grafana
     ports:
       - 3000:3000
+
+  influxdb:
+    image: tutum/influxdb
+    environment:
+      - PRE_CREATE_DB=btc_usd
+      - ADMIN_USER=root
+      - INFLUXDB_INIT_PWD=root
+    ports:
+      - 8083:8083
+      - 8086:8086

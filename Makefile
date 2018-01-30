@@ -3,4 +3,4 @@ up:
 	docker-compose up -d
 
 ssh:
-	docker-compose exec grafana-nim bash
+	docker-compose exec grafanim bash

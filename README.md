@@ -22,7 +22,7 @@ It's not really a "testing environment", just a container to mess around with ap
 Credentials are defaults for InfluxDB and Grafana
 
 ```nim
-import grafana
+import grafanim
 
 let gc = newGrafanaClient("grafana:3000", "admin", "admin") # or ("grafana:3000", "api-key")
 echo gc.NewDashboard( %* {

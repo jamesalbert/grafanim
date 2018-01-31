@@ -6,7 +6,7 @@ Grafana module for nim 🤷‍♂️
 
 ## Installing
 
-`nimble install https://github.com/jamesalbert/grafanim.git@#head`
+`nimble install grafanim`
 
 ## Development
 

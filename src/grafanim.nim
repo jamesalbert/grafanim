@@ -7,8 +7,8 @@ type
     url, key, user, pass: string
 
 
-proc newGrafanaClient* (host: string, user: string, pass: string): GrafanaClient =
-  let url = "http://" & host & "/api/"
+proc newGrafanaClient* (host: string, port: int, user: string, pass: string): GrafanaClient =
+  let url = "http://" & host & ":" & $port & "/api/"
   let client = newHttpClient()
   client.headers = newHttpHeaders({
     "Content-Type": "application/json",
@@ -18,8 +18,8 @@ proc newGrafanaClient* (host: string, user: string, pass: string): GrafanaClient
   return GrafanaClient(cli: client, url: url)
 
 
-proc newGrafanaClient* (host: string, key: string): GrafanaClient =
-  let url = "http://" & host & "/api/"
+proc newGrafanaClient* (host: string, port: int, key: string): GrafanaClient =
+  let url = "http://" & host & ":" & $port & "/api/"
   let client = newHttpClient()
   client.headers = newHttpHeaders({
     "Content-Type": "application/json",

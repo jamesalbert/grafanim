@@ -29,12 +29,12 @@ proc newGrafanaClient* (host: string, port: int, key: string): GrafanaClient =
   return GrafanaClient(cli: client, url: url)
 
 
-method Request (self: GrafanaClient, route: string): JsonNode {.base.} =
+method Request (self: GrafanaClient, route: string): JsonNode {.base, gcsafe.} =
   let resp = self.cli.getContent(self.url & route)
   return parseJson(resp)
 
 
-method Post (self: GrafanaClient, route: string, body: JsonNode): JsonNode {.base.} =
+method Post (self: GrafanaClient, route: string, body: JsonNode): JsonNode {.base, gcsafe.} =
   let resp = self.cli.postContent(self.url & route, body = $body)
   return parseJson(resp)
 

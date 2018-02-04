@@ -178,7 +178,7 @@ discard """
 Post Methods
 """
 
-method NewDashboard* (self: GrafanaClient, opts: JsonNode): JsonNode {.base.} =
+method NewDashboard* (self: GrafanaClient, opts: JsonNode): JsonNode {.base, gcsafe.} =
   try:
     return self.Post("dashboards/db", %* {
       "dashboard": {
@@ -198,7 +198,7 @@ method NewDashboard* (self: GrafanaClient, opts: JsonNode): JsonNode {.base.} =
     }
 
 
-method NewInfluxDBDatasource* (self: GrafanaClient, opts: JsonNode): JsonNode {.base.} =
+method NewInfluxDBDatasource* (self: GrafanaClient, opts: JsonNode): JsonNode {.base, gcsafe.} =
   try:
     return self.Post("datasources", %* {
       "name": opts["name"].getStr,
